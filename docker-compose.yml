@@ -28,14 +28,7 @@ services:
      MYSQL_USER:  ${MYSQL_USER}
      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
-     - type: volume
-       source: mysql_data
-       target: /var/lib/mysql
-    networks:
-     - default
-
+      - ./db/initdb.d:/docker-entrypoint-initdb.d/
 
 networks:
  default:
-volumes:
- mysql_data:
