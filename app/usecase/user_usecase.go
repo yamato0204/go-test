@@ -48,7 +48,7 @@ func (s *UserUsecase) FindByID(id string) (*entities.UserRes, error) {
 
 func (s *UserUsecase) Create(user *entities.User) (entities.UserRes, error) {
 
-	
+
 	if err := s.i.Create(user); err != nil{
 		return entities.UserRes{}, err
 	}
